@@ -1,2 +1,2 @@
 # goPiz
-Pizarra digital en Go
+A digital board (Pizarra in Spanish) write in Go

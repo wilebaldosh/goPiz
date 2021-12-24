@@ -1,6 +1,5 @@
 package main
 
-
 import (
 	"log"
 	"os"
@@ -11,7 +10,6 @@ import (
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 )
-
 
 func fileNewDocument() {
 	log.Println("New document func")
@@ -70,7 +68,7 @@ func main() {
 			helpDisplay()
 		}),
 	)
-
+	// Add the toolbar to container
 	content := container.NewBorder(toolbar, nil, nil, nil, widget.NewLabel("Content"))
 	w.SetContent(content)
 
@@ -87,7 +85,7 @@ func main() {
 	// new File menu
 	fileMenu := fyne.NewMenu("File", fileNew, fileSave, fileExit)
 
-	// New menuItems for File
+	// New menuItems for Edit
 	mEditCut := fyne.NewMenuItem("Cut", func() {
 		editCut()
 	})
@@ -108,6 +106,8 @@ func main() {
 	menu := fyne.NewMainMenu(fileMenu, editMenu)
 	// seting new menu
 	w.SetMainMenu(menu)
+
+	// Resize the window
 	w.Resize(fyne.NewSize(800, 600))
 	w.ShowAndRun()
 }
